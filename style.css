@@ -9,11 +9,11 @@ body {
 }
 
 header {
-  background-color: #4CAF50;
+  background-color: #4c99af;
   color: white;
   padding: 20px 10px;
   font-size: 24px;
-  border-bottom: 3px solid #388e3c;
+  border-bottom: 3px solid #323030;
 }
 
 header a {
@@ -30,7 +30,7 @@ main {
 section h2 {
   font-size: 20px;
   margin-bottom: 10px;
-  color: #2c3e50;
+  color: #121920;
 }
 
 /* GAUGE GRID */
@@ -200,4 +200,67 @@ button:hover {
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+/* Logo Header Styling */
+.site-header {
+  background-color: #121d20;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  flex-wrap: wrap;
+}
+
+.title-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.gas-title {
+  font-size: 18px;
+  margin: 0;
+  font-weight: normal;
+}
+
+.back-link {
+  color: white;
+  font-size: 14px;
+  text-decoration: underline;
+  margin-top: 5px;
+}
+
+.homepage-header {
+  background-color: #222d32;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 30px 50px;
+  height: 120px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.large-logo {
+  height: 70px;
+}
+
+.site-title {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.large-title {
+  font-size: 36px;
 }

@@ -8,9 +8,15 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <header>
-    <h1 id="gas-title">Gas Detail</h1>
-    <a href="index.html" style="color: #fff; text-decoration: underline;">⬅ Back to Dashboard</a>
+  <header class="homepage-header">
+    <div class="header-left">
+      <img src="D:\PRIYA\TYSS GSFC\Minor PRoject\logo (2).png" alt="ChemAir Sense Logo" class="logo large-logo" />
+      <div class="title-block">
+        <h1 class="site-title large-title">ChemiAir Sense</h1>
+        <p id="gas-title" class="gas-title">Gas Detail</p>
+      </div>
+    </div>
+    <a href="index.html" class="back-link">← Back to Dashboard</a>
   </header>
 
   <main>
@@ -37,102 +43,77 @@
   </main>
 
   <script>
-const gasData = {
-  methane: {
-    name: "Methane",
-    ranges: { good: "0–200 ppm", moderate: "201–1000 ppm", bad: "1001+ ppm" },
-    description: "Methane is a flammable gas. High levels can be explosive and indicate gas leaks.",
-    channelId: "2903902", field: 4
-  },
-  ammonia: {
-    name: "Ammonia",
-    ranges: { good: "0–25 ppm", moderate: "26–50 ppm", bad: "51+ ppm" },
-    description: "Ammonia is toxic at high concentrations. It irritates the eyes, nose, and throat.",
-    channelId: "2903902", field: 2
-  },
-  co2: {
-    name: "Carbon Dioxide",
-    ranges: { good: "0–600 ppm", moderate: "601–1000 ppm", bad: "1001+ ppm" },
-    description: "Carbon dioxide is a byproduct of respiration and combustion. High levels cause drowsiness.",
-    channelId: "2903902", field: 3
-  },
-  hydrogen: {
-    name: "Hydrogen",
-    ranges: { good: "0–1000 ppm", moderate: "1001–4000 ppm", bad: "4001+ ppm" },
-    description: "Hydrogen is highly flammable and poses explosion risk at elevated concentrations.",
-    channelId: "2903902", field: 1
-  },
-  benzene: {
-    name: "Benzene",
-    ranges: { good: "0–0.5 ppm", moderate: "0.6–1 ppm", bad: "1+ ppm" },
-    description: "Benzene is a carcinogenic compound found in industrial emissions. Dangerous when inhaled.",
-    channelId: "2916597", field: 2
-  },
-  so2: {
-    name: "Sulfur Dioxide",
-    ranges: { good: "0–2 ppm", moderate: "3–5 ppm", bad: "6+ ppm" },
-    description: "Sulfur dioxide is toxic and irritating. Common in combustion exhausts and labs.",
-    channelId: "2916597", field: 3
-  },
-  nox: {
-    name: "Nitrogen Oxides (NOx)",
-    ranges: { good: "0–1 ppm", moderate: "2–5 ppm", bad: "6+ ppm" },
-    description: "NOx gases contribute to smog and respiratory problems. Hazardous at moderate levels.",
-    channelId: "2916597", field: 1
-  },
-  lpg: {
-    name: "Liquefied Petroleum Gas (LPG)",
-    ranges: { good: "0–1000 ppm", moderate: "1001–2000 ppm", bad: "2001+ ppm" },
-    description: "LPG is flammable and used for heating/cooking. Dangerous when leaked.",
-    channelId: "2916597", field: 4
-  },
-  butane: {
-    name: "Butane",
-    ranges: { good: "0–1000 ppm", moderate: "1001–2000 ppm", bad: "2001+ ppm" },
-    description: "Butane is a component of LPG. Inhalation can lead to drowsiness or suffocation.",
-    channelId: "2916597", field: 5
-  },
-  naturalgas: {
-    name: "Natural Gas",
-    ranges: { good: "0–1000 ppm", moderate: "1001–5000 ppm", bad: "5001+ ppm" },
-    description: "Natural gas (mainly methane) is flammable. Leaks must be addressed immediately.",
-    channelId: "2918153", field: 3
-  },
-  co: {
-    name: "Carbon Monoxide (CO)",
-    ranges: { good: "0–35 ppm", moderate: "36–100 ppm", bad: "101+ ppm" },
-    description: "CO is a toxic gas. It reduces oxygen delivery in the body. Deadly in high doses.",
-    channelId: "2918153", field: 4
-  }
-};
-
-    const gas = new URLSearchParams(window.location.search).get("gas");
-
     const gasData = {
-      co: {
-        name: "Carbon Monoxide",
-        ranges: { good: "0–35 ppm", moderate: "36–100 ppm", bad: "101+ ppm" },
-        description: "Carbon monoxide is a colorless, odorless gas that can cause serious health issues or death with prolonged exposure.",
-        channelId: "2918153",
-        field: 4
-      },
       methane: {
         name: "Methane",
         ranges: { good: "0–200 ppm", moderate: "201–1000 ppm", bad: "1001+ ppm" },
-        description: "Methane is a flammable gas commonly found in natural gas. It can displace oxygen in enclosed areas.",
-        channelId: "2903902",
-        field: 4
+        description: "Methane is a flammable gas. High levels can be explosive and indicate gas leaks.",
+        channelId: "2903902", field: 4
       },
       ammonia: {
         name: "Ammonia",
         ranges: { good: "0–25 ppm", moderate: "26–50 ppm", bad: "51+ ppm" },
-        description: "Ammonia is a pungent gas that irritates the eyes and lungs and is common in lab environments.",
-        channelId: "2903902",
-        field: 2
+        description: "Ammonia is toxic at high concentrations. It irritates the eyes, nose, and throat.",
+        channelId: "2903902", field: 2
       },
-      // ➕ Add remaining gases similarly
+      co2: {
+        name: "Carbon Dioxide",
+        ranges: { good: "0–600 ppm", moderate: "601–1000 ppm", bad: "1001+ ppm" },
+        description: "Carbon dioxide is a byproduct of respiration and combustion. High levels cause drowsiness.",
+        channelId: "2903902", field: 3
+      },
+      hydrogen: {
+        name: "Hydrogen",
+        ranges: { good: "0–1000 ppm", moderate: "1001–4000 ppm", bad: "4001+ ppm" },
+        description: "Hydrogen is highly flammable and poses explosion risk at elevated concentrations.",
+        channelId: "2903902", field: 1
+      },
+      benzene: {
+        name: "Benzene",
+        ranges: { good: "0–0.5 ppm", moderate: "0.6–1 ppm", bad: "1+ ppm" },
+        description: "Benzene is a carcinogenic compound found in industrial emissions. Dangerous when inhaled.",
+        channelId: "2916597", field: 2
+      },
+      so2: {
+        name: "Sulfur Dioxide",
+        ranges: { good: "0–2 ppm", moderate: "3–5 ppm", bad: "6+ ppm" },
+        description: "Sulfur dioxide is toxic and irritating. Common in combustion exhausts and labs.",
+        channelId: "2916597", field: 3
+      },
+      nox: {
+        name: "Nitrogen Oxides (NOx)",
+        ranges: { good: "0–1 ppm", moderate: "2–5 ppm", bad: "6+ ppm" },
+        description: "NOx gases contribute to smog and respiratory problems. Hazardous at moderate levels.",
+        channelId: "2916597", field: 1
+      },
+      lpg: {
+        name: "Liquefied Petroleum Gas (LPG)",
+        ranges: { good: "0–1000 ppm", moderate: "1001–2000 ppm", bad: "2001+ ppm" },
+        description: "LPG is flammable and used for heating/cooking. Dangerous when leaked.",
+        channelId: "2916597", field: 4
+      },
+      butane: {
+        name: "Butane",
+        ranges: { good: "0–1000 ppm", moderate: "1001–2000 ppm", bad: "2001+ ppm" },
+        description: "Butane is a component of LPG. Inhalation can lead to drowsiness or suffocation.",
+        channelId: "2916597", field: 5
+      },
+      naturalgas: {
+        name: "Natural Gas",
+        ranges: { good: "0–1000 ppm", moderate: "1001–5000 ppm", bad: "5001+ ppm" },
+        description: "Natural gas (mainly methane) is flammable. Leaks must be addressed immediately.",
+        channelId: "2918153", field: 3
+      },
+      co: {
+        name: "Carbon Monoxide (CO)",
+        ranges: { good: "0–35 ppm", moderate: "36–100 ppm", bad: "101+ ppm" },
+        description: "CO is a toxic gas. It reduces oxygen delivery in the body. Deadly in high doses.",
+        channelId: "2918153", field: 4
+      }
     };
-
+    
+    const gas = new URLSearchParams(window.location.search).get("gas");
+    
     if (!gas || !gasData[gas]) {
       document.getElementById("gas-title").textContent = "Gas not found!";
     } else {
@@ -142,14 +123,13 @@ const gasData = {
       document.getElementById("range-good").textContent = g.ranges.good;
       document.getElementById("range-moderate").textContent = g.ranges.moderate;
       document.getElementById("range-bad").textContent = g.ranges.bad;
-
-      // Fetch last 20 readings from ThingSpeak
+    
       fetch(`https://api.thingspeak.com/channels/${g.channelId}/fields/${g.field}.json?results=20`)
         .then(res => res.json())
         .then(data => {
           const labels = data.feeds.map(f => new Date(f.created_at).toLocaleTimeString());
           const values = data.feeds.map(f => parseFloat(f[`field${g.field}`]));
-
+    
           const ctx = document.getElementById("gasChart").getContext("2d");
           new Chart(ctx, {
             type: 'line',
@@ -160,7 +140,7 @@ const gasData = {
                 data: values,
                 borderColor: '#4CAF50',
                 backgroundColor: 'rgba(76, 175, 80, 0.2)',
-                tension: 0.2,
+                tension: 0.2
               }]
             },
             options: {
@@ -174,6 +154,6 @@ const gasData = {
           });
         });
     }
-  </script>
+    </script>
 </body>
 </html>
