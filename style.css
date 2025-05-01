@@ -1,0 +1,203 @@
+/* GENERAL PAGE STYLING */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px 10px;
+  font-size: 24px;
+  border-bottom: 3px solid #388e3c;
+}
+
+header a {
+  color: white;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+main {
+  padding: 20px;
+}
+
+section h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+/* GAUGE GRID */
+.gauge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 10px;
+}
+
+/* SVG GAUGE BOX */
+.svg-gauge-container {
+  background: white;
+  border-radius: 12px;
+  width: 250px;
+  padding: 15px 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.svg-gauge-container:hover {
+  transform: scale(1.03);
+}
+
+.svg-gauge-container h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+/* SVG GAUGE ELEMENTS */
+.svg-gauge {
+  width: 100%;
+  height: auto;
+}
+
+.reading-text {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+svg path, svg line {
+  transition: all 0.4s ease;
+}
+
+/* ENVIRONMENT BOXES */
+.env-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.env-box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 200px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.env-box h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+  padding: 30px 20px;
+  background: #eee;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* RESPONSIVE BEHAVIOR */
+@media (max-width: 1024px) {
+  .svg-gauge-container {
+    width: 45%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .gauge-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .svg-gauge-container {
+    width: 90%;
+  }
+
+  .env-box {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  section h2 {
+    font-size: 18px;
+  }
+
+  .reading-text {
+    font-size: 18px;
+  }
+
+  button {
+    width: 90%;
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+/* DETAIL PAGE (gas-detail.html) */
+.gas-info-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px;
+  text-align: left;
+}
+
+.gas-description, .gas-ranges {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.gas-ranges ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gas-ranges li {
+  margin: 10px 0;
+}
+
+.gas-chart-section {
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 700px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
